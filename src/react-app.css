@@ -9,6 +9,10 @@
   background: #f8f5f1;
 }
 
+.react-navbar-enabled .header {
+  display: none;
+}
+
 .rv-navbar__container {
   width: 100%;
   margin: 0 auto;

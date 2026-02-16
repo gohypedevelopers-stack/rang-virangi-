@@ -10,32 +10,12 @@ const getProps = (el) => ({
   sectionId: el.dataset.sectionId || ''
 });
 
-function App(props) {
-  const [count, setCount] = useState(0);
+import EvrydaeHome from './EvrydaeHome';
 
+function App(props) {
   return (
-    <div className="react-app-card" data-section-id={props.sectionId}>
-      <div className="react-app-header">
-        <h2 className="h2">{props.title}</h2>
-        {props.body ? <p className="react-app-body">{props.body}</p> : null}
-      </div>
-      <div className="react-app-actions">
-        <button
-          type="button"
-          className="button button--primary"
-          onClick={() => setCount((prev) => prev + 1)}
-        >
-          {props.buttonLabel} ({count})
-        </button>
-        <button
-          type="button"
-          className="button button--secondary"
-          onClick={() => setCount(0)}
-        >
-          {props.secondaryLabel}
-        </button>
-      </div>
-      <p className="react-app-meta">Section: {props.sectionId}</p>
+    <div className="react-app-wrapper" data-section-id={props.sectionId}>
+      <EvrydaeHome />
     </div>
   );
 }

@@ -1,0 +1,99 @@
+{{ 'react-app.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top | times: 0.75 | round: 0 }}px;
+    padding-bottom: {{ section.settings.padding_bottom | times: 0.75 | round: 0 }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<section class="react-app-section color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
+  <div
+    data-react-root="true"
+    data-section-id="{{ section.id }}"
+    data-title="{{ section.settings.title | escape }}"
+    data-body="{{ section.settings.body | escape }}"
+    data-button-label="{{ section.settings.button_label | escape }}"
+    data-secondary-label="{{ section.settings.secondary_label | escape }}"
+    {{ section.shopify_attributes }}
+  ></div>
+</section>
+
+{% schema %}
+{
+  "name": "Custom React App",
+  "tag": "section",
+  "class": "section",
+  "disabled_on": {
+    "groups": ["header", "footer"]
+  },
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "React is running"
+    },
+    {
+      "type": "text",
+      "id": "body",
+      "label": "Body",
+      "default": "This section is rendered with React. Edit the text in the theme editor."
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Primary button label",
+      "default": "Click me"
+    },
+    {
+      "type": "text",
+      "id": "secondary_label",
+      "label": "Secondary button label",
+      "default": "Reset"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "Colors",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "Section padding"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 52
+    }
+  ],
+  "presets": [
+    {
+      "name": "Custom React App"
+    }
+  ]
+}
+{% endschema %}

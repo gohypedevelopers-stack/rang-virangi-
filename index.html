@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>React App Preview</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+      background: #0f1115;
+      color: #e8eaed;
+    }
+
+    .preview-shell {
+      width: 100%;
+      margin: 0;
+      padding: 0;
+    }
+
+    .preview-title {
+      font-size: 20px;
+      margin-bottom: 16px;
+    }
+
+    .preview-note {
+      font-size: 14px;
+      opacity: 0.7;
+      margin-bottom: 24px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="preview-shell">
+    </div>
+    <div data-react-root="true" data-section-id="dev-preview" data-title="React is running"
+      data-body="Edit src/react-app.jsx and see updates instantly." data-button-label="Increment"
+      data-secondary-label="Reset"></div>
+  </div>
+  <script type="module" src="/src/react-app.jsx"></script>
+</body>
+
+</html>

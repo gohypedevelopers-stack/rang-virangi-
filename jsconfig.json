@@ -1,25 +1,12 @@
 {
-  "compilerOptions": {
-    "checkJs": false,
-    "target": "ES2022",
-    "module": "ES2022",
-    "moduleResolution": "Bundler",
-    "baseUrl": ".",
-    "paths": {
-      "~/*": [
-        "app/*"
-      ]
+    "compilerOptions": {
+        // ...
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+                "./src/*"
+            ]
+        }
+        // ...
     }
-  },
-  "include": [
-    "env.d.ts",
-    "app/**/*.js",
-    "app/**/*.jsx",
-    "app/**/*.d.ts",
-    "*.js",
-    "*.jsx",
-    "*.d.ts",
-    ".graphqlrc.js",
-    ".react-router/types/**/*"
-  ]
 }

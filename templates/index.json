@@ -1,5 +1,13 @@
 {
   "sections": {
+    "react-app": {
+      "type": "react-app",
+      "settings": {
+        "title": "React is running",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
     "featured_collection": {
       "type": "featured-collection",
       "settings": {
@@ -30,6 +38,7 @@
     }
   },
   "order": [
+    "react-app",
     "featured_collection"
   ]
 }

@@ -1,39 +1,129 @@
-.react-app-section {
+.react-app-wrapper {
+  width: 100%;
+  background: #f8f5f1;
+}
+
+.rv-navbar {
   position: relative;
+  width: 100%;
+  background: #f8f5f1;
 }
 
-.react-app-section .react-app-card {
+.rv-navbar__container {
+  width: 100%;
+  margin: 0 auto;
   display: grid;
-  gap: 1.6rem;
-  padding: 2.4rem;
-  border-radius: var(--text-boxes-radius);
-  background: rgb(var(--color-background));
-  border: 1px solid rgba(var(--color-foreground), 0.12);
-  box-shadow: 0 1.2rem 2.4rem rgba(var(--color-shadow), 0.08);
-}
-
-.react-app-section .react-app-header {
-  display: grid;
-  gap: 0.8rem;
-}
-
-.react-app-section .react-app-body {
-  margin: 0;
-  color: rgba(var(--color-foreground), 0.75);
-}
-
-.react-app-section .react-app-meta {
-  font-size: 1.3rem;
-  color: rgba(var(--color-foreground), 0.6);
-}
-
-.react-app-section .react-app-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1.2rem;
+  grid-template-columns: auto 1fr auto;
+  grid-template-areas: "brand nav actions";
   align-items: center;
+  gap: 2rem;
+  padding: 1.2rem 3vw;
 }
 
-.react-app-section .react-app-actions .button {
-  min-width: 14rem;
+.rv-brand {
+  grid-area: brand;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  font-style: italic;
+  font-weight: 600;
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+  color: #121212;
+  text-decoration: none;
+}
+
+.rv-brand::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.3rem;
+  height: 2px;
+  background: #121212;
+  border-radius: 999px;
+}
+
+.rv-nav {
+  grid-area: nav;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.2rem;
+}
+
+.rv-nav__link {
+  position: relative;
+  text-decoration: none;
+  color: #1a1a1a;
+  font-size: 0.98rem;
+  letter-spacing: 0.02em;
+  font-weight: 500;
+  padding: 0.15rem 0;
+}
+
+.rv-nav__link::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -0.35rem;
+  height: 2px;
+  background: transparent;
+  transition: background 0.2s ease;
+}
+
+.rv-nav__link:hover::after,
+.rv-nav__link:focus-visible::after,
+.rv-nav__link.is-active::after {
+  background: #121212;
+}
+
+.rv-actions {
+  grid-area: actions;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 1.1rem;
+}
+
+.rv-icon-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  background: transparent;
+  color: #1a1a1a;
+  cursor: pointer;
+  border-radius: 999px;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.rv-icon-btn:hover,
+.rv-icon-btn:focus-visible {
+  background: rgba(18, 18, 18, 0.08);
+}
+
+@media (max-width: 820px) {
+  .rv-navbar__container {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "brand"
+      "nav"
+      "actions";
+    justify-items: center;
+    gap: 0.9rem;
+    padding: 1.2rem 5vw 1.4rem;
+  }
+
+  .rv-actions {
+    justify-content: center;
+  }
+
+  .rv-brand::after,
+  .rv-nav__link::after {
+    bottom: -0.25rem;
+  }
 }

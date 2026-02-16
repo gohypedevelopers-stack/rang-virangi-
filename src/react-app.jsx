@@ -1,6 +1,7 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { createRoot } from 'react-dom/client';
 import './react-app.css';
+import Navbar from './components/Navbar';
 
 const getProps = (el) => ({
   title: el.dataset.title || 'React is running',
@@ -10,12 +11,10 @@ const getProps = (el) => ({
   sectionId: el.dataset.sectionId || ''
 });
 
-import EvrydaeHome from './EvrydaeHome';
-
 function App(props) {
   return (
     <div className="react-app-wrapper" data-section-id={props.sectionId}>
-      <EvrydaeHome />
+      <Navbar />
     </div>
   );
 }

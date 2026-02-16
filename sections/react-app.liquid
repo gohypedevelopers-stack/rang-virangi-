@@ -15,17 +15,15 @@
 {%- endstyle -%}
 
 <section class="react-app-section color-{{ section.settings.color_scheme }} gradient section-{{ section.id }}-padding">
-  <div class="page-width">
-    <div
-      data-react-root="true"
-      data-section-id="{{ section.id }}"
-      data-title="{{ section.settings.title | escape }}"
-      data-body="{{ section.settings.body | escape }}"
-      data-button-label="{{ section.settings.button_label | escape }}"
-      data-secondary-label="{{ section.settings.secondary_label | escape }}"
-      {{ section.shopify_attributes }}
-    ></div>
-  </div>
+  <div
+    data-react-root="true"
+    data-section-id="{{ section.id }}"
+    data-title="{{ section.settings.title | escape }}"
+    data-body="{{ section.settings.body | escape }}"
+    data-button-label="{{ section.settings.button_label | escape }}"
+    data-secondary-label="{{ section.settings.secondary_label | escape }}"
+    {{ section.shopify_attributes }}
+  ></div>
 </section>
 
 {% schema %}
